@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
+
+    <script>
+            // changing the button HTML only
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('button').innerHTML = 'Changed';
+
+            // selecting the second button using the class selector by putting (.) into the string
+        console.log(document.querySelector('.js-button')); 
+        /*
+        document.body.innerHTML = 'hello'; // this code can change all the page into a string
+        document.title = 'Good job'; // changing the title on the page
+        */
+    </script>
+</body>
+</html>

@@ -11,7 +11,20 @@
             onclick="subscribe();">
             Subscribe</button>
 
+    <p>Rock Paper Scissors</p>
+    <a href="../Rock-Paper-Scissor/rock-paper-scissor01.html">Click Here</a>
+
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of Order" class="js-cost-input">
+    <button onclick="
+        calculateTotal();
+    ">Calculate</button>
+
     <script>
+        function calculateTotal () {
+            document.querySelector('.js-cost-input');
+        }
+
         function subscribe() {
         const buttonElement = document.querySelector(".js-subscribe-button");
             if (buttonElement.innerText === "Subscribe") {

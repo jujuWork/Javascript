@@ -14,15 +14,17 @@
     <button onclick="localStorage.removeItem('score'); location.reload();">Reset Score</button>
 
     <script>
-        // Scoring your Win, Losses, Ties
-    let score = JSON.parse(localStorage.getItem('score')); // JSON.parse Converting the string into object
-        if (score === null ) {
-            score = {
-                wins: 0,
-                losses: 0,
-                ties: 0
-            };
-        }
+        // Resetting your Win, Losses, Ties
+    let score = localStorage.getItem('score');
+    if (score) {
+        score = JSON.parse(score); // converting the string into object
+    } else {
+        score = {
+            wins: 0,
+            losses: 0,
+            ties: 0
+        };
+    }
 
     function playGame(playerMove) {
         const randomNumber = Math.random();

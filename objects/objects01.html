@@ -7,18 +7,55 @@
 </head>
 <body>
     <script>
-        const product = {
-            name: 'socks',
-            price: 1090
+        // const product = {
+        //     name: 'socks',
+        //     price: 1090
+        // };
+
+        // console.log(product);
+        // console.log(product.name); // accessing the property name value
+        // console.log(product.price); // accessing the property price value
+
+        // product.name = 'cotton socks';
+
+        // console.log(product);
+        const object3 = {
+            message: 'hello',
+            price: 1000
         };
 
-        console.log(product);
-        console.log(product.name); // accessing the property name value
-        console.log(product.price); // accessing the property price value
+        const object4 = object3;
 
-        product.name = 'cotton socks';
+        const object5 = {
+            message: 'hello',
+            price: 1000
+        };
 
-        console.log(product);
+        // decontructing object
+        const { message, price } = object3;
+        console.log(message);
+        console.log(price);
+
+        // comparing if object 3 and object are the same reference
+        console.log(object4 === object3); 
+
+        // comparing if object 4 and object 5 is the same reference
+        console.log(object4 === object5);
+
+        // Shorthand
+        const object6 = {
+            // message: message
+            message,
+            // method: function function01 () {
+            //     console.log('method');
+            // }
+            // this method below is the same as above in a shorthand method
+            method () {
+                console.log('method');
+            }
+        };
+
+        console.log(object6);
     </script>
 </body>
 </html>

@@ -10,7 +10,9 @@
 
     <button onclick="playGame('rock')">Rock</button>
     <button onclick="playGame('paper')">Paper</button>
-    <button onclick="playGame('scissors')">Scissor</button> 
+    <button onclick="playGame('scissors')">Scissor</button>
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
     <p class="js-score"></p>
     <button onclick="localStorage.removeItem('score'); location.reload();">Reset Score</button>
 
@@ -27,12 +29,16 @@
         };
     };
 
+////////// SELECTING THE CLASS ELEMENT /////////////
+
     // viewing the scores list
     document.querySelector('.js-score')
         .innerHTML = 
         `Wins: ${score.wins},
         Losses: ${score.losses},
         Ties: ${score.ties}`;
+
+
 
     function playGame(playerMove) {
         const randomNumber = Math.random();
@@ -84,12 +90,21 @@
 
         updateScoreElement();
 
-        alert(`You picked ${playerMove}. 
-        Computer picked ${computerMove}. ${result}
-        Wins: ${score.wins},
-        Losses: ${score.losses},
-        Ties: ${score.ties}
-        `);
+        // viewing the result in paragraph
+        document.querySelector('.js-result')
+            .innerHTML = result;
+
+        // viewing the moves in paragraph
+        document.querySelector('.js-moves')
+            .innerHTML = 
+            `You ${playerMove} - ${computerMove} Computer`;
+
+        // alert(`You picked ${playerMove}. 
+        // Computer picked ${computerMove}. ${result}
+        // Wins: ${score.wins},
+        // Losses: ${score.losses},
+        // Ties: ${score.ties}
+        // `);
     }
     </script>
 </body>
